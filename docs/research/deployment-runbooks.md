@@ -1,8 +1,7 @@
 # Deployment Runbooks
 
 Step-by-step procedures for setting up the pipeline, deploying to a Steam Deck, and the
-per-iteration build/test loop. Distilled from [`Research_Report.md`](Research_Report.md)
-§2 and §6. For the architectural overview of these paths, see
+per-iteration build/test loop. For the architectural overview of these paths, see
 [`../../ARCHITECTURE.md`](../../ARCHITECTURE.md) §5.
 
 ---

@@ -1,7 +1,6 @@
 # Troubleshooting
 
-Common errors and fixes when building on a Mac and running on a Steam Deck. Distilled from
-[`Research_Report.md`](Research_Report.md) §6.
+Common errors and fixes when building on a Mac and running on a Steam Deck.
 
 ---
 

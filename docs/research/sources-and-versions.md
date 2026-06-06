@@ -1,8 +1,7 @@
 # Sources, Versions & Pricing
 
 Pinned package versions, key dates, pricing data points, and the notable quotes that anchor the
-architecture. All values are carried over unchanged from
-[`Research_Report.md`](Research_Report.md) — see it for full inline citations.
+architecture, with their attributions.
 
 ---
 

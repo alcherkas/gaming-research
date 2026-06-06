@@ -1,9 +1,8 @@
 # Caveats & Roadmap
 
-Known limitations, Apple Silicon / ARM gotchas, the forward-looking GDC 2026 picture, and the
-conditions under which you should change the recommended stack. Distilled from
-[`Research_Report.md`](Research_Report.md) §5, the Caveats section, and the Recommendations
-section.
+Known limitations, Apple Silicon / ARM gotchas, the forward-looking GDC 2026 picture, the staged
+rollout plan with its graduation benchmarks, and the conditions under which you should change the
+recommended stack.
 
 ---
 
@@ -70,6 +69,50 @@ older unmaintained gaming titles relying on Intel-based frameworks.
   future migration option once stable; most indies will continue using the community stack
   through 2026. Unity published **no benchmarks** alongside the announcement — measure with
   MangoHUD on your actual title before assuming wins over a Proton-run Windows build.
+
+---
+
+## Staged rollout & milestones
+
+A suggested sequence so pipeline risk is retired before networking code is written. Each stage
+has an explicit gate before moving on.
+
+**Stage 1 — Set up the pipeline before writing any networking code (Week 1):**
+
+- Install Unity 6.3 + Linux Build Support (IL2CPP) on the Mac. Verify a Hello-World cube project
+  builds to Linux and runs on the Deck as a non-Steam game.
+- Buy a Steam Deck OLED — at $789 USD it is non-optional; skipping it surfaces Verified-on-Deck
+  failures at the worst possible time.
+- Create a free secondary Steam account dedicated to Deck testing.
+- **Gate:** don't move on until this build → deploy → launch round-trip works in **under 5
+  minutes**.
+
+**Stage 2 — Wire up Steamworks and one-peer test (Week 2):**
+
+- Add Steamworks.NET + FishNet + FishySteamworks via UPM. Use appID **480** for now.
+- Build for Linux, deploy to Deck, host on Mac (editor Play Mode), join from Deck. Confirm
+  `SteamAPI.IsSteamRunning()` is true on both, and a FishySteamworks `ServerManager.StartConnection`
+  succeeds against the Mac's `steamID64`.
+- **Benchmark to graduate:** 2-peer connection with physics objects syncing over the Steam relay
+  between Mac editor and Deck build, **≤ 100 ms RTT**.
+
+**Stage 3 — 3–4 peer testing (Week 3–4):**
+
+- Register the real appID with Steamworks once you have a store page; switch from 480 to it.
+- Set up `steamcmd`-on-Mac with a `devtest` private beta branch (push = 1 command); distribute
+  the password to 1–3 testers.
+- Use FishNet's Multipass so both Tugboat (ParrelSync editor testing) and FishySteamworks (Steam
+  beta-branch testing) are selectable at runtime.
+
+**Stage 4 — Verified-on-Deck readiness (last 25% of project):**
+
+- Vulkan-first graphics; no shader requiring features outside Steam Deck RDNA 2's capability set.
+- On-screen keyboard via `ShowFloatingGamepadTextInput` / `ShowGamepadTextInput` wherever text
+  input is required (Verified badge requirement).
+- Default controller config covers all functionality; no external launcher (launchers fail Deck
+  UX expectations).
+- **Targets:** 60 fps at 800p with 4 networked physics players, ≤ 15W typical TDP,
+  offline-mode-tolerant for any singleplayer content.
 
 ---
 

@@ -5,9 +5,7 @@ built and shipped as a **native-Linux Steam Deck title** entirely from an **Appl
 MacBook** — no Windows machine in the loop.
 
 It is the structural, "what is this and why" view. For step-by-step procedures, error
-tables, version pins, pricing data, and source citations, see [`docs/research/`](docs/research/).
-The full source report this architecture is distilled from is preserved verbatim at
-[`docs/research/Research_Report.md`](docs/research/Research_Report.md).
+tables, version pins, and pricing data, see [`docs/research/`](docs/research/).
 
 ---
 
@@ -197,9 +195,7 @@ transport testing.
   [`docs/research/deployment-runbooks.md`](docs/research/deployment-runbooks.md)
 - Common errors and fixes, Linux-build debugging:
   [`docs/research/troubleshooting.md`](docs/research/troubleshooting.md)
-- Caveats, Apple Silicon gotchas, GDC 2026 roadmap, Rosetta sunset timeline:
+- Caveats, Apple Silicon gotchas, GDC 2026 roadmap, Rosetta sunset timeline, staged rollout:
   [`docs/research/caveats-and-roadmap.md`](docs/research/caveats-and-roadmap.md)
 - Pinned versions, dates, pricing, and key quotes:
   [`docs/research/sources-and-versions.md`](docs/research/sources-and-versions.md)
-- Full original research report (verbatim source of truth):
-  [`docs/research/Research_Report.md`](docs/research/Research_Report.md)
