@@ -43,10 +43,10 @@ runtime that executes on the Deck and connects peers over Steam's relay.
 │     • FishNet + Multipass  ·  Steamworks.NET  ·  FishySteamworks                          │
 │     • Fast loop: ParrelSync clones + Tugboat (UDP) transport                              │
 │                                                                                           │
-└───────────────────────────────────────────┬───────────────────────────────────────────-─┘
+└───────────────────────────────────────────┬─────────────────────────────────────────────┘
                                              │  Build Profiles → Linux / x86_64 / IL2CPP / Vulkan-first
                                              ▼
-┌────────────────────────── BUILD & DEPLOY PIPELINE ────────────────────────────────────-──┐
+┌────────────────────────── BUILD & DEPLOY PIPELINE ───────────────────────────────────────┐
 │                                                                                           │
 │   IL2CPP cross-compile (toolchain runs under Rosetta) ──► native Linux x86_64 ELF         │
 │        output: MyGame.x86_64 · UnityPlayer.so · MyGame_Data/ · Plugins/                   │
@@ -59,7 +59,7 @@ runtime that executes on the Deck and connects peers over Steam's relay.
 └───────────────────────────────────────────┬─────────────────────────────────────────────┘
                                              │
                                              ▼
-┌────────────────────────── RUNTIME PLANE ──────────────────────────────────────────────-──┐
+┌────────────────────────── RUNTIME PLANE ─────────────────────────────────────────────────┐
 │                                                                                           │
 │   Steam Deck (RDNA 2 APU, Vulkan/RADV, 800p, ~15W)  ── 2nd Steam account = client/peer    │
 │                          ▲                                                                │
@@ -67,7 +67,7 @@ runtime that executes on the Deck and connects peers over Steam's relay.
 │                          ▼                                                                │
 │   Mac editor / build (host)   +   optional 3rd–4th peers (cloud Linux VM, friend)         │
 │                                                                                           │
-└──────────────────────────────────────────────────────────────────────────────────────-──┘
+└─────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---

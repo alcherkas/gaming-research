@@ -23,8 +23,8 @@ Common errors and fixes when building on a Mac and running on a Steam Deck. Dist
 ## Steamworks library platform filters
 
 - **Steamworks.NET:** when building for macOS or Linux the wrong `Steamworks.NET.dll` is copied
-  by default — create a post-build script to copy the correct version (Windows: `steam_api.dll`;
-  Linux: `libsteam_api.so`). In Unity 6 the `.unitypackage` ships with correct Plugin Inspector
+  by default — create a post-build script to copy the correct version (Windows:
+  `steam_api.dll` for 32-bit or `steam_api64.dll` for 64-bit; Linux: `libsteam_api.so`). In Unity 6 the `.unitypackage` ships with correct Plugin Inspector
   platform filters; the gotcha mostly bites when source was cloned manually. Verify each native
   library's "Platform settings" only check the matching OS/architecture.
 - **Facepunch.Steamworks:** a long-standing misconfiguration in `Facepunch.Steamworks.Posix`

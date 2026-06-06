@@ -97,7 +97,7 @@ FishySteamworks lobbies all behave as players will see them.
 ## One-time setup checklist (≈ 2 hours)
 
 1. Install Unity Hub → Unity 6.3 (or latest LTS) with **Linux Build Support (IL2CPP)** and
-   **(Mono)**. Confirm `com.unity.toolchain.macos-arm64-linux-x86_64` is installed.
+   **Linux Build Support (Mono)**. Confirm `com.unity.toolchain.macos-arm64-linux-x86_64` is installed.
 2. Install FishNet, Steamworks.NET, FishySteamworks. Wire up Steamworks.NET's `SteamManager`;
    set `steam_appid.txt` (use **480 / Space War** — Valve's free test appID — for early testing).
 3. Get a Steamworks partner account; register the real appID once you have a store page.
