@@ -1,0 +1,7 @@
+<linker>
+  <!-- Preserve networking + Steam code from aggressive managed stripping (High) in release builds:
+       FishNet codegen/serializers and Steamworks P/Invoke are reached via reflection/native calls. -->
+  <assembly fullname="Assembly-CSharp" preserve="all"/>
+  <assembly fullname="FishNet.Runtime" preserve="all"/>
+  <assembly fullname="com.rlabrecque.steamworks.net" preserve="all"/>
+</linker>
